@@ -11,7 +11,7 @@ import SwiftUI
 struct Pando_frontendApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignUpOrLoginView()
         }
     }
 }
