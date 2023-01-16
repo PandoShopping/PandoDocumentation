@@ -22,7 +22,7 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
-        
+            
             GeometryReader { geometry in
                 Text("Welcome to" + "\n" + "Pando!")
                     .font(.custom("HelveticaNeue-Medium", size: geometry.size.width * 0.12))
@@ -69,29 +69,27 @@ struct SignUpView: View {
             
             
             // SecureField("Enter your password", text: $password)
-            Button {
-                //action
-            } label: {
-                
-                GeometryReader { geometry in
-                    Button(action: {
-                        
-                        // button action here
-                    }) {
-                        Text("Continue")
-                            .font(.custom("Poppins-Medium", size: geometry.size.width * 0.048))
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: geometry.size.width * 0.8, height: 45, alignment: .center)
-                            .fixedSize()
-                            .background(Color(red: 21/255, green: 111/255, blue: 215/255))
-                            .cornerRadius(15)
-                        
-                    }   .position(x: geometry.size.width / widthSpacingFactor, y: geometry.size.height/0.9)
+            
+            
+            GeometryReader { geometry in
+                Button(action: {
                     
-                }
+                    // button action here
+                }) {
+                    Text("Continue")
+                        .font(.custom("Poppins-Medium", size: geometry.size.width * 0.048))
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: geometry.size.width * 0.8, height: 45, alignment: .center)
+                        .fixedSize()
+                        .background(Color(red: 21/255, green: 111/255, blue: 215/255))
+                        .cornerRadius(15)
+                    
+                }   .position(x: geometry.size.width / widthSpacingFactor, y: geometry.size.height/0.9)
                 
             }
+            
+            
             // This is for the "or sign up with" two horizontal lines aesthetic thing in the middle:
             GeometryReader { geometry in
                 HStack {
@@ -147,7 +145,7 @@ struct SignUpView: View {
                 Button(action: {
                     // Button action here
                 })  {
-                   
+                    
                     HStack {
                         Image("Apple-logo")
                             .resizable()
@@ -187,6 +185,6 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView(showLogin: { })
-.previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portrait)
     }
 }

@@ -23,6 +23,8 @@ struct ConfirmSignUpView: View {
             } label: {
                 Text("Submit")
             }
+            
+            
         }
       
     }
