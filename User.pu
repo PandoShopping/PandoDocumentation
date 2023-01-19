@@ -1,0 +1,10 @@
+@startuml 
+
+class User { 
+  id: UUID 
+  username: String 
+  location: String 
+  email: AWSEmail 
+}
+
+@enduml 

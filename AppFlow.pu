@@ -1,0 +1,26 @@
+@startuml 
+
+participant SessionView 
+entity Google 
+participant ProductView 
+participant LocationPermissionsRequestView 
+participant LocationPermissionsDeniedView
+ 
+database AmplifyUserDatabase 
+database BostonShopifyDatabase
+
+SessionView -> SessionView: let locationViewModel = LocationPermissionViewModel() 
+
+alt locationPermissionsNotDefined
+
+SessionView -> LocationPermissionsRequestView: inject locationViewModel 
+
+else locationPermissionsGranted
+
+ 
+else locationPermissionsDenied 
+SessionView -> LocationPermissionsDeniedView: inject locationViewModel 
+
+
+end 
+@enduml 
